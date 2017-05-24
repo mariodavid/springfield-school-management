@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.ceupa.web.parent.ParentBrowse"
+        focusComponent="parentsTable"
+        lookupComponent="parentsTable"
+        messagesPack="com.company.ceupa.web.parent">
+    <dsContext>
+        <groupDatasource id="parentsDs"
+                         class="com.company.ceupa.entity.Parent"
+                         view="parent-view">
+            <query>
+                <![CDATA[select e from ceupa$Parent e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="parentsTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="parentsTable"
+                datasource="parentsDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="parentsTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="name"/>
+                <column id="user"/>
+                <column id="phone"/>
+                <column id="email"/>
+            </columns>
+            <rows datasource="parentsDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="parentsTable.create"/>
+                <button id="editBtn"
+                        action="parentsTable.edit"/>
+                <button id="removeBtn"
+                        action="parentsTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

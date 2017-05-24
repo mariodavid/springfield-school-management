@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.company.ceupa.web.person.PersonEdit"
+        datasource="personDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.company.ceupa.web.person">
+    <dsContext>
+        <datasource id="personDs"
+                    class="com.company.ceupa.entity.Person"
+                    view="person-view"/>
+        <collectionDatasource id="usersDs"
+                              class="com.haulmont.cuba.security.entity.User"
+                              view="_minimal">
+            <query>
+                <![CDATA[select e from sec$User e]]>
+            </query>
+        </collectionDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="personDs">
+            <column width="250px">
+                <field property="name"/>
+                <field optionsDatasource="usersDs"
+                       property="user"/>
+            </column>
+        </fieldGroup>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

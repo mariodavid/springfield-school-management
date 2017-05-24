@@ -1,0 +1,5 @@
+@import "halo-ext";
+
+@mixin com_company_ceupa {
+  @include com_company_ceupa-halo-ext;
+}

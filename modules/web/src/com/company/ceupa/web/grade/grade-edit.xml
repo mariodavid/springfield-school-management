@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.company.ceupa.web.grade.GradeEdit"
+        datasource="gradeDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.company.ceupa.web.grade">
+    <dsContext>
+        <datasource id="gradeDs"
+                    class="com.company.ceupa.entity.Grade"
+                    view="grade-view">
+            <collectionDatasource id="teachersDs"
+                                  property="teachers"/>
+        </datasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="gradeDs">
+            <column width="250px">
+                <field property="name"/>
+            </column>
+        </fieldGroup>
+        <groupBox id="teachersBox"
+                  caption="msg://com.company.ceupa.entity/Grade.teachers">
+            <table id="teachersTable"
+                   height="200px"
+                   width="100%">
+                <actions>
+                    <action id="add"/>
+                    <action id="remove"/>
+                </actions>
+                <columns>
+                    <column id="name"/>
+                </columns>
+                <rows datasource="teachersDs"/>
+                <buttonsPanel>
+                    <button action="teachersTable.add"/>
+                    <button action="teachersTable.remove"/>
+                </buttonsPanel>
+            </table>
+        </groupBox>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

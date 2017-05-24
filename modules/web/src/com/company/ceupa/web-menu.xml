@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<menu-config xmlns="http://schemas.haulmont.com/cuba/menu.xsd">
+    <menu id="application-ceupa"
+          insertBefore="administration">
+        <item screen="ceupa$Person.browse"/>
+        <item screen="ceupa$Parent.browse"/>
+        <item screen="ceupa$Teacher.browse"/>
+        <separator/>
+        <item screen="ceupa$Grade.browse"/>
+    </menu>
+</menu-config>

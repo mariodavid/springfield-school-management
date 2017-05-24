@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<screen-config xmlns="http://schemas.haulmont.com/cuba/screens.xsd">
+    <include file="com/company/ceupa/screens.xml"/>
+    <screen id="ceupa$Person.browse"
+            template="com/company/ceupa/web/person/person-browse.xml"/>
+    <screen id="ceupa$Person.edit"
+            template="com/company/ceupa/web/person/person-edit.xml"/>
+    <screen id="ceupa$Parent.browse"
+            template="com/company/ceupa/web/parent/parent-browse.xml"/>
+    <screen id="ceupa$Parent.edit"
+            template="com/company/ceupa/web/parent/parent-edit.xml"/>
+    <screen id="ceupa$Grade.browse"
+            template="com/company/ceupa/web/grade/grade-browse.xml"/>
+    <screen id="ceupa$Grade.edit"
+            template="com/company/ceupa/web/grade/grade-edit.xml"/>
+    <screen id="ceupa$Teacher.browse"
+            template="com/company/ceupa/web/teacher/teacher-browse.xml"/>
+    <screen id="ceupa$Teacher.edit"
+            template="com/company/ceupa/web/teacher/teacher-edit.xml"/>
+    <screen id="mainWindow"
+            template="com/company/ceupa/web/screens/ext-mainwindow.xml"/>
+</screen-config>

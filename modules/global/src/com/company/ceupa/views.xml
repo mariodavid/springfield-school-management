@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<views xmlns="http://schemas.haulmont.com/cuba/view.xsd">
+    <view class="com.company.ceupa.entity.Grade"
+          extends="_local"
+          name="grade-view">
+        <property name="teachers"
+                  view="_minimal"/>
+    </view>
+    <view class="com.company.ceupa.entity.Teacher"
+          extends="_local"
+          name="teacher-view">
+        <property name="grades"
+                  view="_minimal"/>
+        <property name="user"
+                  view="_minimal"/>
+    </view>
+    <view class="com.company.ceupa.entity.Person"
+          extends="_local"
+          name="person-view">
+        <property name="user"
+                  view="_minimal"/>
+    </view>
+    <view class="com.company.ceupa.entity.Parent"
+          extends="_local"
+          name="parent-view">
+        <property name="user"
+                  view="_minimal"/>
+    </view>
+</views>

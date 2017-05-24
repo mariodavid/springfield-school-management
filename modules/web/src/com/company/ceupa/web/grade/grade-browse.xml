@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.ceupa.web.grade.GradeBrowse"
+        focusComponent="gradesTable"
+        lookupComponent="gradesTable"
+        messagesPack="com.company.ceupa.web.grade">
+    <dsContext>
+        <groupDatasource id="gradesDs"
+                         class="com.company.ceupa.entity.Grade"
+                         view="grade-view">
+            <query>
+                <![CDATA[select e from ceupa$Grade e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="gradesTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="gradesTable"
+                datasource="gradesDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="gradesTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="name"/>
+            </columns>
+            <rows datasource="gradesDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="gradesTable.create"/>
+                <button id="editBtn"
+                        action="gradesTable.edit"/>
+                <button id="removeBtn"
+                        action="gradesTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

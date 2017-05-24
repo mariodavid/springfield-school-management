@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             version="2.0">
+    <persistence-unit name="springfield-school-management"
+                      transaction-type="RESOURCE_LOCAL">
+        <class>com.company.ceupa.entity.Person</class>
+        <class>com.company.ceupa.entity.Teacher</class>
+        <class>com.company.ceupa.entity.Grade</class>
+        <class>com.company.ceupa.entity.Parent</class>
+    </persistence-unit>
+</persistence>

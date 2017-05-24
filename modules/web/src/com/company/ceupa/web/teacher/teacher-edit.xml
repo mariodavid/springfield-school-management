@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.company.ceupa.web.teacher.TeacherEdit"
+        datasource="teacherDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.company.ceupa.web.teacher">
+    <dsContext>
+        <datasource id="teacherDs"
+                    class="com.company.ceupa.entity.Teacher"
+                    view="teacher-view">
+            <collectionDatasource id="gradesDs"
+                                  property="grades"/>
+        </datasource>
+        <collectionDatasource id="usersDs"
+                              class="com.haulmont.cuba.security.entity.User"
+                              view="_minimal">
+            <query>
+                <![CDATA[select e from sec$User e]]>
+            </query>
+        </collectionDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="teacherDs">
+            <column width="250px">
+                <field property="name"/>
+                <field optionsDatasource="usersDs"
+                       property="user"/>
+                <field property="type"/>
+            </column>
+        </fieldGroup>
+        <groupBox id="gradesBox"
+                  caption="msg://com.company.ceupa.entity/Teacher.grades">
+            <table id="gradesTable"
+                   height="200px"
+                   width="100%">
+                <actions>
+                    <action id="add"/>
+                    <action id="remove"/>
+                </actions>
+                <columns>
+                    <column id="name"/>
+                </columns>
+                <rows datasource="gradesDs"/>
+                <buttonsPanel>
+                    <button action="gradesTable.add"/>
+                    <button action="gradesTable.remove"/>
+                </buttonsPanel>
+            </table>
+        </groupBox>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>
