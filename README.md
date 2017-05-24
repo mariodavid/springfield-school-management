@@ -26,6 +26,6 @@ The base class "Person" in the browse screen
 ![persons browse screen](https://github.com/mariodavid/springfield-school-management/blob/master/img/persons-browse.png)
 
 The base class "Person" editor with the base attributes
-![persons browse screen](https://github.com/mariodavid/springfield-school-management/blob/master/img/persons-editorgaa.png)
+![persons browse screen](https://github.com/mariodavid/springfield-school-management/blob/master/img/persons-editor.png)
 
 
