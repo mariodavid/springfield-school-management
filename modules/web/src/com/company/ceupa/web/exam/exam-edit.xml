@@ -31,8 +31,8 @@
                    height="100%"
                    width="100%">
                 <actions>
-                    <action id="create"/>
-                    <action id="edit"/>
+                    <action id="create" openType="DIALOG"/>
+                    <action id="edit" openType="DIALOG"/>
                     <action id="remove"/>
                 </actions>
                 <columns>

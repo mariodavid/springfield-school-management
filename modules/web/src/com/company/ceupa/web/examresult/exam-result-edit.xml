@@ -10,8 +10,6 @@
                     class="com.company.ceupa.entity.ExamResult"
                     view="examResult-view"/>
     </dsContext>
-    <dialogMode height="600"
-                width="800"/>
     <layout expand="windowActions"
             spacing="true">
         <fieldGroup id="fieldGroup"

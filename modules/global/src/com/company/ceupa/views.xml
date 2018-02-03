@@ -33,6 +33,8 @@
           name="student-view">
         <property name="grade"
                   view="_minimal"/>
+        <property name="user"
+                  view="_minimal"/>
     </view>
     <view class="com.company.ceupa.entity.Course"
           extends="_local"
