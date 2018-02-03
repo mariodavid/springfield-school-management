@@ -12,6 +12,7 @@
         <menu id="classes">
             <item screen="ceupa$Grade.browse"/>
             <item screen="ceupa$Course.browse"/>
+            <item screen="ceupa$Exam.browse"/>
         </menu>
     </menu>
 </menu-config>

@@ -27,4 +27,10 @@
             template="com/company/ceupa/web/course/course-browse.xml"/>
     <screen id="ceupa$Course.edit"
             template="com/company/ceupa/web/course/course-edit.xml"/>
+    <screen id="ceupa$Exam.browse"
+            template="com/company/ceupa/web/exam/exam-browse.xml"/>
+    <screen id="ceupa$Exam.edit"
+            template="com/company/ceupa/web/exam/exam-edit.xml"/>
+    <screen id="ceupa$ExamResult.edit"
+            template="com/company/ceupa/web/examresult/exam-result-edit.xml"/>
 </screen-config>

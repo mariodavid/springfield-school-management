@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.company.ceupa.web.exam.ExamEdit"
+        datasource="examDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.company.ceupa.web.exam">
+    <dsContext>
+        <datasource id="examDs"
+                    class="com.company.ceupa.entity.Exam"
+                    view="exam-view">
+            <collectionDatasource id="resultsDs"
+                                  property="results"/>
+        </datasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="resultsBox"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="examDs">
+            <column width="250px">
+                <field property="course"/>
+                <field property="topic"/>
+                <field property="examinationDate"/>
+            </column>
+        </fieldGroup>
+        <groupBox id="resultsBox"
+                  caption="msg://com.company.ceupa.entity/Exam.results">
+            <table id="resultsTable"
+                   height="100%"
+                   width="100%">
+                <actions>
+                    <action id="create"/>
+                    <action id="edit"/>
+                    <action id="remove"/>
+                </actions>
+                <columns>
+                    <column id="student"/>
+                    <column id="result"/>
+                </columns>
+                <rows datasource="resultsDs"/>
+                <buttonsPanel>
+                    <button action="resultsTable.create"/>
+                    <button action="resultsTable.edit"/>
+                    <button action="resultsTable.remove"/>
+                </buttonsPanel>
+            </table>
+        </groupBox>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

@@ -11,6 +11,11 @@ import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 import com.haulmont.cuba.core.entity.StandardEntity;
 import com.haulmont.chile.core.annotations.NamePattern;
+import com.haulmont.chile.core.annotations.Composition;
+import com.haulmont.cuba.core.entity.annotation.OnDelete;
+import com.haulmont.cuba.core.global.DeletePolicy;
+import java.util.List;
+import javax.persistence.OneToMany;
 
 @NamePattern("%s|name")
 @Table(name = "CEUPA_COURSE")
@@ -31,6 +36,20 @@ public class Course extends StandardEntity {
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "GRADE_ID")
     protected Grade grade;
+
+    @Composition
+    @OnDelete(DeletePolicy.CASCADE)
+    @OneToMany(mappedBy = "course")
+    protected List<Exam> exams;
+
+    public void setExams(List<Exam> exams) {
+        this.exams = exams;
+    }
+
+    public List<Exam> getExams() {
+        return exams;
+    }
+
 
     public void setGrade(Grade grade) {
         this.grade = grade;

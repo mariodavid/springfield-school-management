@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.ceupa.web.exam.ExamBrowse"
+        focusComponent="examsTable"
+        lookupComponent="examsTable"
+        messagesPack="com.company.ceupa.web.exam">
+    <dsContext>
+        <groupDatasource id="examsDs"
+                         class="com.company.ceupa.entity.Exam"
+                         view="exam-view">
+            <query>
+                <![CDATA[select e from ceupa$Exam e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="examsTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="examsTable"
+                datasource="examsDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="examsTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="course"/>
+                <column id="topic"/>
+                <column id="examinationDate"/>
+            </columns>
+            <rows datasource="examsDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="examsTable.create"/>
+                <button id="editBtn"
+                        action="examsTable.edit"/>
+                <button id="removeBtn"
+                        action="examsTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

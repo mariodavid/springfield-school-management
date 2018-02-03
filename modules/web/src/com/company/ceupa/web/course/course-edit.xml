@@ -8,7 +8,13 @@
     <dsContext>
         <datasource id="courseDs"
                     class="com.company.ceupa.entity.Course"
-                    view="course-view"/>
+                    view="course-view">
+            <collectionDatasource id="examsDs"
+                                  property="exams">
+                <collectionDatasource id="examResultsDs"
+                                      property="results"/>
+            </collectionDatasource>
+        </datasource>
         <collectionDatasource id="teachersDs"
                               class="com.company.ceupa.entity.Teacher"
                               view="_minimal">
@@ -19,7 +25,7 @@
     </dsContext>
     <dialogMode height="600"
                 width="800"/>
-    <layout expand="windowActions"
+    <layout expand="examsBox"
             spacing="true">
         <fieldGroup id="fieldGroup"
                     datasource="courseDs">
@@ -30,6 +36,28 @@
                 <field property="grade"/>
             </column>
         </fieldGroup>
+        <groupBox id="examsBox"
+                  caption="msg://com.company.ceupa.entity/Course.exams">
+            <table id="examsTable"
+                   height="100%"
+                   width="100%">
+                <actions>
+                    <action id="create"/>
+                    <action id="edit"/>
+                    <action id="remove"/>
+                </actions>
+                <columns>
+                    <column id="topic"/>
+                    <column id="examinationDate"/>
+                </columns>
+                <rows datasource="examsDs"/>
+                <buttonsPanel>
+                    <button action="examsTable.create"/>
+                    <button action="examsTable.edit"/>
+                    <button action="examsTable.remove"/>
+                </buttonsPanel>
+            </table>
+        </groupBox>
         <frame id="windowActions"
                screen="editWindowActions"/>
     </layout>

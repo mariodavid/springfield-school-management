@@ -9,5 +9,7 @@
         <class>com.company.ceupa.entity.Parent</class>
         <class>com.company.ceupa.entity.Student</class>
         <class>com.company.ceupa.entity.Course</class>
+        <class>com.company.ceupa.entity.Exam</class>
+        <class>com.company.ceupa.entity.ExamResult</class>
     </persistence-unit>
 </persistence>

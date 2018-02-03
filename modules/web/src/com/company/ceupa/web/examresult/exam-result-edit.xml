@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.company.ceupa.web.examresult.ExamResultEdit"
+        datasource="examResultDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.company.ceupa.web.examresult">
+    <dsContext>
+        <datasource id="examResultDs"
+                    class="com.company.ceupa.entity.ExamResult"
+                    view="examResult-view"/>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="examResultDs">
+            <column width="250px">
+                <field property="exam"/>
+                <field property="student"/>
+                <field property="result"/>
+            </column>
+        </fieldGroup>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

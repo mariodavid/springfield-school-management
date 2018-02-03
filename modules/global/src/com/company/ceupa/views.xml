@@ -41,5 +41,23 @@
                   view="_minimal"/>
         <property name="grade"
                   view="_minimal"/>
+        <property name="exams"
+                  view="exam-view"/>
+    </view>
+    <view class="com.company.ceupa.entity.Exam"
+          extends="_local"
+          name="exam-view">
+        <property name="course"
+                  view="_minimal"/>
+        <property name="results"
+                  view="examResult-view"/>
+    </view>
+    <view class="com.company.ceupa.entity.ExamResult"
+          extends="_local"
+          name="examResult-view">
+        <property name="exam"
+                  view="_minimal"/>
+        <property name="student"
+                  view="_minimal"/>
     </view>
 </views>
