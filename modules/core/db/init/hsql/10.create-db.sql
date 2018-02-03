@@ -37,6 +37,7 @@ create table CEUPA_GRADE (
     DELETED_BY varchar(50),
     --
     NAME varchar(255),
+    GRADE_NUMBER integer not null,
     --
     primary key (ID)
 )^
@@ -51,10 +52,31 @@ create table CEUPA_PARENT (
     primary key (ID)
 )^
 -- end CEUPA_PARENT
--- begin CEUPA_TEACHER_GRADE_LINK
-create table CEUPA_TEACHER_GRADE_LINK (
+
+-- begin CEUPA_STUDENT
+create table CEUPA_STUDENT (
+    ID varchar(36) not null,
+    --
     GRADE_ID varchar(36) not null,
-    TEACHER_ID varchar(36) not null,
-    primary key (GRADE_ID, TEACHER_ID)
+    --
+    primary key (ID)
 )^
--- end CEUPA_TEACHER_GRADE_LINK
+-- end CEUPA_STUDENT
+-- begin CEUPA_COURSE
+create table CEUPA_COURSE (
+    ID varchar(36) not null,
+    VERSION integer not null,
+    CREATE_TS timestamp,
+    CREATED_BY varchar(50),
+    UPDATE_TS timestamp,
+    UPDATED_BY varchar(50),
+    DELETE_TS timestamp,
+    DELETED_BY varchar(50),
+    --
+    NAME varchar(255) not null,
+    TEACHER_ID varchar(36) not null,
+    GRADE_ID varchar(36) not null,
+    --
+    primary key (ID)
+)^
+-- end CEUPA_COURSE

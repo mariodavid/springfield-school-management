@@ -11,6 +11,7 @@ import java.util.List;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 
 @PrimaryKeyJoinColumn(name = "ID", referencedColumnName = "ID")
 @Table(name = "CEUPA_TEACHER")
@@ -23,18 +24,17 @@ public class Teacher extends Person {
     protected String type;
 
 
-    @JoinTable(name = "CEUPA_TEACHER_GRADE_LINK",
-        joinColumns = @JoinColumn(name = "TEACHER_ID"),
-        inverseJoinColumns = @JoinColumn(name = "GRADE_ID"))
-    @ManyToMany
-    protected List<Grade> grades;
 
-    public void setGrades(List<Grade> grades) {
-        this.grades = grades;
+    @OnDelete(DeletePolicy.CASCADE)
+    @OneToMany(mappedBy = "teacher")
+    protected List<Course> courses;
+
+    public void setCourses(List<Course> courses) {
+        this.courses = courses;
     }
 
-    public List<Grade> getGrades() {
-        return grades;
+    public List<Course> getCourses() {
+        return courses;
     }
 
 

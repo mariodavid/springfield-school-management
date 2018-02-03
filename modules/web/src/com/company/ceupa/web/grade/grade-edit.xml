@@ -9,8 +9,10 @@
         <datasource id="gradeDs"
                     class="com.company.ceupa.entity.Grade"
                     view="grade-view">
-            <collectionDatasource id="teachersDs"
-                                  property="teachers"/>
+            <collectionDatasource id="coursesDs"
+                                  property="courses"/>
+            <collectionDatasource id="studentsDs"
+                                  property="students"/>
         </datasource>
     </dsContext>
     <dialogMode height="600"
@@ -21,27 +23,58 @@
                     datasource="gradeDs">
             <column width="250px">
                 <field property="name"/>
+                <field property="gradeNumber"/>
             </column>
         </fieldGroup>
-        <groupBox id="teachersBox"
-                  caption="msg://com.company.ceupa.entity/Grade.teachers">
-            <table id="teachersTable"
-                   height="200px"
-                   width="100%">
-                <actions>
-                    <action id="add"/>
-                    <action id="remove"/>
-                </actions>
-                <columns>
-                    <column id="name"/>
-                </columns>
-                <rows datasource="teachersDs"/>
-                <buttonsPanel>
-                    <button action="teachersTable.add"/>
-                    <button action="teachersTable.remove"/>
-                </buttonsPanel>
-            </table>
-        </groupBox>
+        <tabSheet>
+            <tab id="studentsTab"
+                 caption="Students"
+                 margin="true,false,false,false"
+                 spacing="true">
+                <table id="studentsTable"
+                       height="200px"
+                       width="100%">
+                    <actions>
+                        <action id="create"/>
+                        <action id="edit"/>
+                        <action id="remove"/>
+                    </actions>
+                    <columns>
+                        <column id="name"/>
+                    </columns>
+                    <rows datasource="studentsDs"/>
+                    <buttonsPanel>
+                        <button action="studentsTable.create"/>
+                        <button action="studentsTable.edit"/>
+                        <button action="studentsTable.remove"/>
+                    </buttonsPanel>
+                </table>
+            </tab>
+            <tab id="coursesTab"
+                 caption="Courses"
+                 margin="true,false,false,false"
+                 spacing="true">
+                <table id="coursesTable"
+                       height="200px"
+                       width="100%">
+                    <actions>
+                        <action id="create"/>
+                        <action id="edit"/>
+                        <action id="remove"/>
+                    </actions>
+                    <columns>
+                        <column id="name"/>
+                        <column id="teacher"/>
+                    </columns>
+                    <rows datasource="coursesDs"/>
+                    <buttonsPanel>
+                        <button action="coursesTable.create"/>
+                        <button action="coursesTable.edit"/>
+                        <button action="coursesTable.remove"/>
+                    </buttonsPanel>
+                </table>
+            </tab>
+        </tabSheet>
         <frame id="windowActions"
                screen="editWindowActions"/>
     </layout>

@@ -19,4 +19,12 @@
             template="com/company/ceupa/web/teacher/teacher-edit.xml"/>
     <screen id="mainWindow"
             template="com/company/ceupa/web/screens/ext-mainwindow.xml"/>
+    <screen id="ceupa$Student.browse"
+            template="com/company/ceupa/web/student/student-browse.xml"/>
+    <screen id="ceupa$Student.edit"
+            template="com/company/ceupa/web/student/student-edit.xml"/>
+    <screen id="ceupa$Course.browse"
+            template="com/company/ceupa/web/course/course-browse.xml"/>
+    <screen id="ceupa$Course.edit"
+            template="com/company/ceupa/web/course/course-edit.xml"/>
 </screen-config>

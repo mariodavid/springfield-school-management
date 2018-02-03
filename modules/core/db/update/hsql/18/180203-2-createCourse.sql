@@ -1,0 +1,2 @@
+alter table CEUPA_COURSE add constraint FK_CEUPA_COURSE_TEACHER foreign key (TEACHER_ID) references CEUPA_TEACHER(ID);
+create index IDX_CEUPA_COURSE_TEACHER on CEUPA_COURSE (TEACHER_ID);

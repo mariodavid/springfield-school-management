@@ -3,16 +3,18 @@
     <view class="com.company.ceupa.entity.Grade"
           extends="_local"
           name="grade-view">
-        <property name="teachers"
-                  view="_minimal"/>
+        <property name="courses"
+                  view="course-view"/>
+        <property name="students"
+                  view="_local"/>
     </view>
     <view class="com.company.ceupa.entity.Teacher"
           extends="_local"
           name="teacher-view">
-        <property name="grades"
-                  view="_minimal"/>
         <property name="user"
                   view="_minimal"/>
+        <property name="courses"
+                  view="course-view"/>
     </view>
     <view class="com.company.ceupa.entity.Person"
           extends="_local"
@@ -24,6 +26,20 @@
           extends="_local"
           name="parent-view">
         <property name="user"
+                  view="_minimal"/>
+    </view>
+    <view class="com.company.ceupa.entity.Student"
+          extends="_local"
+          name="student-view">
+        <property name="grade"
+                  view="_minimal"/>
+    </view>
+    <view class="com.company.ceupa.entity.Course"
+          extends="_local"
+          name="course-view">
+        <property name="teacher"
+                  view="_minimal"/>
+        <property name="grade"
                   view="_minimal"/>
     </view>
 </views>

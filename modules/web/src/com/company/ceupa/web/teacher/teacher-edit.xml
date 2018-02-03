@@ -9,8 +9,8 @@
         <datasource id="teacherDs"
                     class="com.company.ceupa.entity.Teacher"
                     view="teacher-view">
-            <collectionDatasource id="gradesDs"
-                                  property="grades"/>
+            <collectionDatasource id="coursesDs"
+                                  property="courses"/>
         </datasource>
         <collectionDatasource id="usersDs"
                               class="com.haulmont.cuba.security.entity.User"
@@ -33,24 +33,18 @@
                 <field property="type"/>
             </column>
         </fieldGroup>
-        <groupBox id="gradesBox"
-                  caption="msg://com.company.ceupa.entity/Teacher.grades">
-            <table id="gradesTable"
-                   height="200px"
-                   width="100%">
-                <actions>
-                    <action id="add"/>
-                    <action id="remove"/>
-                </actions>
+        <groupBox id="coursesGroupbox"
+                  caption="Courses"
+                  spacing="true">
+            <groupTable id="coursesTable"
+                        height="200px"
+                        width="100%">
                 <columns>
                     <column id="name"/>
+                    <column id="grade"/>
                 </columns>
-                <rows datasource="gradesDs"/>
-                <buttonsPanel>
-                    <button action="gradesTable.add"/>
-                    <button action="gradesTable.remove"/>
-                </buttonsPanel>
-            </table>
+                <rows datasource="coursesDs"/>
+            </groupTable>
         </groupBox>
         <frame id="windowActions"
                screen="editWindowActions"/>

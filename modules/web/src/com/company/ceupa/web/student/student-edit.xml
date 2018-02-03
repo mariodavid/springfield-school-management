@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.company.ceupa.web.student.StudentEdit"
+        datasource="studentDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.company.ceupa.web.student">
+    <dsContext>
+        <datasource id="studentDs"
+                    class="com.company.ceupa.entity.Student"
+                    view="student-view"/>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="studentDs">
+            <column width="250px">
+                <field property="name"/>
+                <field property="grade"/>
+            </column>
+        </fieldGroup>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

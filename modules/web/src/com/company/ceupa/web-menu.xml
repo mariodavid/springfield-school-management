@@ -2,10 +2,16 @@
 <menu-config xmlns="http://schemas.haulmont.com/cuba/menu.xsd">
     <menu id="application-ceupa"
           insertBefore="administration">
-        <item screen="ceupa$Person.browse"/>
-        <item screen="ceupa$Parent.browse"/>
-        <item screen="ceupa$Teacher.browse"/>
-        <separator/>
-        <item screen="ceupa$Grade.browse"/>
+        <menu id="persons">
+            <item screen="ceupa$Person.browse"/>
+            <separator/>
+            <item screen="ceupa$Student.browse"/>
+            <item screen="ceupa$Teacher.browse"/>
+            <item screen="ceupa$Parent.browse"/>
+        </menu>
+        <menu id="classes">
+            <item screen="ceupa$Grade.browse"/>
+            <item screen="ceupa$Course.browse"/>
+        </menu>
     </menu>
 </menu-config>

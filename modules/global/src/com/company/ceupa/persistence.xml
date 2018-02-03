@@ -7,5 +7,7 @@
         <class>com.company.ceupa.entity.Teacher</class>
         <class>com.company.ceupa.entity.Grade</class>
         <class>com.company.ceupa.entity.Parent</class>
+        <class>com.company.ceupa.entity.Student</class>
+        <class>com.company.ceupa.entity.Course</class>
     </persistence-unit>
 </persistence>

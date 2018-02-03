@@ -9,6 +9,11 @@ import java.util.List;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import com.haulmont.chile.core.annotations.Composition;
+import com.haulmont.cuba.core.entity.annotation.OnDelete;
+import com.haulmont.cuba.core.global.DeletePolicy;
+import javax.persistence.OneToMany;
+import javax.validation.constraints.NotNull;
 
 @NamePattern("%s|name")
 @Table(name = "CEUPA_GRADE")
@@ -19,18 +24,45 @@ public class Grade extends StandardEntity {
     @Column(name = "NAME")
     protected String name;
 
-    @JoinTable(name = "CEUPA_TEACHER_GRADE_LINK",
-        joinColumns = @JoinColumn(name = "GRADE_ID"),
-        inverseJoinColumns = @JoinColumn(name = "TEACHER_ID"))
-    @ManyToMany
-    protected List<Teacher> teachers;
 
-    public void setTeachers(List<Teacher> teachers) {
-        this.teachers = teachers;
+    @Composition
+    @OnDelete(DeletePolicy.CASCADE)
+    @OneToMany(mappedBy = "grade")
+    protected List<Student> students;
+
+    @NotNull
+    @Column(name = "GRADE_NUMBER", nullable = false)
+    protected Integer gradeNumber;
+
+    @Composition
+    @OnDelete(DeletePolicy.CASCADE)
+    @OneToMany(mappedBy = "grade")
+    protected List<Course> courses;
+
+    public void setStudents(List<Student> students) {
+        this.students = students;
     }
 
-    public List<Teacher> getTeachers() {
-        return teachers;
+    public List<Student> getStudents() {
+        return students;
+    }
+
+
+    public void setGradeNumber(Integer gradeNumber) {
+        this.gradeNumber = gradeNumber;
+    }
+
+    public Integer getGradeNumber() {
+        return gradeNumber;
+    }
+
+
+    public void setCourses(List<Course> courses) {
+        this.courses = courses;
+    }
+
+    public List<Course> getCourses() {
+        return courses;
     }
 
 

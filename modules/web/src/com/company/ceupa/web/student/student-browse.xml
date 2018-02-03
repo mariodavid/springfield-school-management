@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
         caption="msg://browseCaption"
-        class="com.company.ceupa.web.grade.GradeBrowse"
-        focusComponent="gradesTable"
-        lookupComponent="gradesTable"
-        messagesPack="com.company.ceupa.web.grade">
+        class="com.company.ceupa.web.student.StudentBrowse"
+        focusComponent="studentsTable"
+        lookupComponent="studentsTable"
+        messagesPack="com.company.ceupa.web.student">
     <dsContext>
-        <groupDatasource id="gradesDs"
-                         class="com.company.ceupa.entity.Grade"
-                         view="grade-view">
+        <groupDatasource id="studentsDs"
+                         class="com.company.ceupa.entity.Student"
+                         view="student-view">
             <query>
-                <![CDATA[select e from ceupa$Grade e]]>
+                <![CDATA[select e from ceupa$Student e]]>
             </query>
         </groupDatasource>
     </dsContext>
     <dialogMode height="600"
                 width="800"/>
-    <layout expand="gradesTable"
+    <layout expand="studentsTable"
             spacing="true">
         <filter id="filter"
-                applyTo="gradesTable"
-                datasource="gradesDs">
+                applyTo="studentsTable"
+                datasource="studentsDs">
             <properties include=".*"/>
         </filter>
-        <groupTable id="gradesTable"
+        <groupTable id="studentsTable"
                     width="100%">
             <actions>
                 <action id="create"/>
@@ -32,18 +32,18 @@
             </actions>
             <columns>
                 <column id="name"/>
-                <column id="gradeNumber"/>
+                <column id="grade"/>
             </columns>
-            <rows datasource="gradesDs"/>
+            <rows datasource="studentsDs"/>
             <rowsCount/>
             <buttonsPanel id="buttonsPanel"
                           alwaysVisible="true">
                 <button id="createBtn"
-                        action="gradesTable.create"/>
+                        action="studentsTable.create"/>
                 <button id="editBtn"
-                        action="gradesTable.edit"/>
+                        action="studentsTable.edit"/>
                 <button id="removeBtn"
-                        action="gradesTable.remove"/>
+                        action="studentsTable.remove"/>
             </buttonsPanel>
         </groupTable>
     </layout>
