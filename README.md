@@ -1,4 +1,4 @@
-# springfield-school-management
+# CUBA example: Springfield school management
 
 CUBA example that shows how to build a school management system for simpsons land.
 
